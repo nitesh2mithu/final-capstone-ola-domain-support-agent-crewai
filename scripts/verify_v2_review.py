@@ -31,9 +31,15 @@ def main():
     parser.add_argument('--no-write', action='store_true')
     args = parser.parse_args()
     baseline = '64e19e9036e160bc93109fb2766d7e15c9d0a448'
-    assert git('branch', '--show-current').decode().strip() == 'polish-v2'
-    for ref in ['v1.0.0^{}', 'main', 'origin/main']:
-        assert git('rev-parse', ref).decode().strip() == baseline, ref
+    release = 'dae0867753bc7ab17f924a66dd9aa7362e2e8bfa'
+    branch = git('branch', '--show-current').decode().strip()
+    assert branch in {'main', 'polish-v2'}, branch
+    assert git('rev-parse', 'v1.0.0^{}').decode().strip() == baseline
+    assert git('rev-parse', 'v2.0.0^{}').decode().strip() == release
+    git('merge-base', '--is-ancestor', baseline, 'HEAD')
+    git('merge-base', '--is-ancestor', release, 'HEAD')
+    if branch == 'main':
+        git('merge-base', '--is-ancestor', 'origin/main', 'HEAD')
     original = ROOT.parent / 'PROJECT_CAPSTONE'
     original_verified = (original / '.git').exists()
     if original_verified:
@@ -133,7 +139,7 @@ def main():
     result = {
         'timestamp': datetime.now(ZoneInfo('Asia/Calcutta')).isoformat(),
         'result': 'PASSED', 'reviewed_head': git('rev-parse', 'HEAD').decode().strip(),
-        'branch': 'polish-v2', 'original_checkout_preservation_verified': original_verified,
+        'branch': branch, 'original_checkout_preservation_verified': original_verified,
         'baseline_refs_preserved': True, 'reachable_history_scans': history,
         'archived_records': archive_checks, 'escalation_comparison': escalation, 'relative_links_verified': links,
         'exact_dependency_pins_verified': pins, 'intended_files_scanned': len(manifest),

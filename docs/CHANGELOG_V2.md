@@ -1,25 +1,43 @@
-# Version 2 changes
+# Change record
 
-## Layout
-Exact moves and path-only config-manifest changes: [layout record](../evidence/v2_layout_changes.json). Archived v1 records describe v1 code only.
+## Final capstone publication — 7 November 2026
 
-## Intended escalation behavior
-New independent reopen_count stream seed+1; original fields/draw order unchanged. Formula changed from0.6flag+0.4age to0.4flag+0.3age+0.3reopen. Round scores to6 decimals, nearest-rankp80, strictgreater-than excludes ties. Old/new dataset hashes, thresholds and all selected examples: [single change record](../evidence/v2_escalation_change.json). Test formula/threshold expectations explicitly updated, range/type negative cases strengthened, original-record invariance asserted against preserved v1 evidence. Active protected dataset.py digest updated; archived digests preserved. Dataset8/8, CrewAI12/12 and all60 independently calculated actual lookups verified. Errors016/017 fixed and verified; original failure evidence retained.
+The verified project, refreshed evidence, and complete Git history were published as [Final Capstone — Ola Domain Support Agent (CrewAI)](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai). The earlier Version 1 and Version 2 repositories remain unchanged as provenance records.
 
-## Evaluation extension
-Original15labels,judgeprompt/rubric unchanged. Five additionalcases frozenbeforeexecution with new generic refusal/injection expectation types, not modified originalmetrics. Results: original15 means1.0 allfour; additional5 Accuracy0.8/Grounding1.0/Completeness0.7/Safety1.0. X01relatedrefundquotes failed requiredrefusal; X04missing2of4facts. Five meaningful fixture/arithmetic checks passed, including unsupported inference/partial/unsafe/forgedguard evidence. No crew/query/calibration tuning. See [freeze](../evidence/v2_extra_freeze.json), [extra results](../evidence/v2_extra_evaluation.md), [fixtures](../evidence/v2_judge_fixtures.json).
+## Documentation finalization — 7 November 2026
 
-## Readability and current verification
-README177lines in requestedsectionorder; learnings215words; AI assistance explicit, personalcontributionsconfirmation pending. Fullcurrentv2suite56distinct/76executions plus29realrequests/logs andindependentall16audit executed successfully. Original15andextra5reportsrepeatidentically; source/labels/calibration unchanged exceptdeclared score/reopen/path/evaluation-extension work. Documentation/content gates passed previously and are being freshly repeated in the final local review.
+The README now leads with the support problem, end-to-end flow, setup, and usage. Required dataset, retrieval, and evaluation measurements remain in the README, while release history and extended verification details link to their dedicated records.
 
-## Final review corrections
+The project status was reduced to the current state, measured results, limitations, and next action. Superseded milestone snapshots remain available through Git history, the development process, the error log, archived evidence, and the final acceptance report.
 
-Fresh runtime verification passed all56 distinct checks /76 executions,29 real HTTP/WebSocket requests, repeated15+5 evaluations and the independent all16 audit. No application or scoring changes during review. The additional2 documentation behavior checks pass.
+## Version 2 implementation
 
-ERROR-019 corrected macOS temporary-path canonicalization in the new reproducible history review helper. ERROR-020 corrected a historical audit link-base variable, supported contained directory links and redirected audit output to excluded runtime storage, protecting archived reports. Existing stage assertions remain intact. Failed attempts were retained before fixes; both errors were resolved only after actual verification.
+### Repository layout
 
-[Review evidence](../evidence/v2_final_review.json) includes reachable-history hygiene, archive preservation, exact dependency pins and independent old/new score arithmetic. Local commits9711d22 and a4b3427 separate these corrections. The final evidence/documentation refresh was a separate local commit before the approved publication.
+Documentation moved under `docs/`, and historical Version 1 evidence moved under `evidence/archive/v1/`. The [layout record](../evidence/v2_layout_changes.json) lists the exact moves and path-only manifest changes. Archived records continue to describe Version 1.
 
-## Version 2 publication — 2026-10-11T23:42:49.912429+05:30
+### Escalation behavior
 
-[PR1](https://github.com/nitesh2mithu/Ola-Domain-Support-Agent_Manuel-and-AI/pull/1) merged preserving all reviewed history; annotated v2.0.0 points to `dae0867753bc7ab17f924a66dd9aa7362e2e8bfa`. Publicmain exacttree/README/docs/evidence verification passed; v1remote/checkout/tag unchanged. GitHub CI0; recorded local56distinct/76executions,2docchecks and29realrequests used, with mock/evaluation limitations retained. Publication-only docs updates follow the release commit; no application change, deployment or portal submission.
+Version 2 added an independently seeded `reopen_count` field while preserving the original seed-42 fields and their random draw order. The score changed from `0.6*escalated + 0.4*(days_since_created/30)` to:
+
+`0.4*escalated + 0.3*(days_since_created/30) + 0.3*(reopen_count/3)`
+
+Scores are rounded to six decimals. The nearest-rank 80th percentile is used as the threshold, and a strict greater-than comparison excludes ties. The [change evidence](../evidence/v2_escalation_change.json) contains hashes, thresholds, examples, and independent calculations for both versions.
+
+The updated tests cover the formula, threshold, value ranges, types, original-record invariance, and all 60 ticket lookups. The preserved failure record documents the lookup-reference error found during integration and its verified correction.
+
+### Evaluation extension
+
+The original 15 labels, judge prompt, and rubric remained unchanged. Five new cases were [frozen before execution](../evidence/v2_extra_freeze.json): two near-domain cases, two multi-topic or ambiguous cases, and one injection case with a fabricated phone number.
+
+The original set scored **1.0/1.0/1.0/1.0** for Accuracy, Grounding, Completeness, and Safety. The additional set scored **0.8/1.0/0.7/1.0**. Case X01 returned related refund evidence without the required refusal, while X04 covered two of four requested facts. No labels, calibration settings, or crew behavior were changed after observing these results.
+
+### Final review corrections
+
+The final review corrected temporary-path normalization, historical link resolution, directory-link validation, and historical audit output paths. Archived reports remain protected from later verification runs. Failed attempts and their corrections are retained in [the error log](ERROR_LOG.md).
+
+## Publication record — 11 October 2026
+
+[Pull request #1](https://github.com/nitesh2mithu/Ola-Domain-Support-Agent_Manuel-and-AI/pull/1) merged the reviewed implementation with its history intact. Annotated tag `v2.0.0` points to `dae0867753bc7ab17f924a66dd9aa7362e2e8bfa`. A later documentation-only publication record updated `main` without changing the tagged application.
+
+Public tree, README rendering, local links, and required evidence were verified after publication. The Version 1 repository, checkout, and tag remained unchanged. No external service deployment or course-portal submission was performed.

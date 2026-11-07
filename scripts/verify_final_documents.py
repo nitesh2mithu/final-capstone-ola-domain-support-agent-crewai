@@ -33,7 +33,8 @@ def main():
                   'scripts.run_final_verification','scripts.evaluate_support','1110a243fdf4706b3f48f1d95db1a4f5529b4d41']:
         assert token in readme,token
     assert len(readme.splitlines())<250
-    sections=['Overview','Quick start','Dataset design choices','Knowledge base','RAG','Crew and tools','Memory, schema, guardrails','API and logging','Evaluation','Review stage, governance and cache','Limitations','What I learned','AI assistance note']
+    sections=['Overview','How it works','Setup and quick start','Usage examples','Dataset and knowledge base',
+              'Retrieval and evaluation','Guardrails, governance and limitations','Documentation','AI assistance']
     assert re.findall(r'^## (.+)$',readme,re.M)==sections
     assert not re.search(r'Milestone|PASSED|ERROR-0\d+|handoff|authorized|course.portal|marks disclaimer',readme,re.I)
     assert 150<=len((ROOT/'docs/LEARNINGS.md').read_text().split())<=250
@@ -46,7 +47,7 @@ def main():
     statuses={int(line.split('|')[1]):line.split('|')[-2].strip() for line in (ROOT/'docs/REQUIREMENTS_TRACKER.md').read_text().splitlines() if re.match(r'^\| \d+ \|',line)}
     assert len(statuses)==16 and all(v=='PASSED' for v in statuses.values())
     assert 'Status: OPEN' not in (ROOT/'docs/ERROR_LOG.md').read_text()
-    assert (ROOT/'docs/PROJECT_STATUS.md').read_text().startswith('# REVIEW NOTES')
+    assert (ROOT/'docs/PROJECT_STATUS.md').read_text().startswith('# Project status')
     ignored=(ROOT/'.gitignore').read_text().splitlines()
     for token in ['.venv/','.venv311/','.bootstrap/','.python/','.cache/','.runtime/','.models/','__pycache__/','.env','.env.*','.aws/','.codex/','.agents/','.vscode/','!evidence/*.jsonl']:
         assert token in ignored,token

@@ -1,6 +1,6 @@
 
 Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
-Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9777.60it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 21979.82it/s]
 <PROJECT_CAPSTONE>/tests/milestone_04_acceptance.py:38: LangChainDeprecationWarning: RunnableWithMessageHistory is deprecated. Use LangGraph's built-in persistence instead.
   cls.app = SupportSession(cache_enabled=False)
 test_01_all_ticket_fields_scores_distribution_and_invalid_inputs (__main__.MilestoneFourTests.test_01_all_ticket_fields_scores_distribution_and_invalid_inputs) ... ok
@@ -19,7 +19,7 @@ test_11_deterministic_repeated_actual_execution (__main__.MilestoneFourTests.tes
 test_12_preserved_inputs_offline_controls_and_zero_attempts (__main__.MilestoneFourTests.test_12_preserved_inputs_offline_controls_and_zero_attempts) ... ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 1.818s
+Ran 12 tests in 0.898s
 
 OK
 {"errors": 0, "failures": 0, "passed": true, "tests_run": 12}

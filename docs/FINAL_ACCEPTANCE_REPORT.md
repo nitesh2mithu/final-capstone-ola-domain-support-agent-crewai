@@ -2,11 +2,13 @@
 
 **Verdict: VERSION 2 PUBLISHED — all 16 official implementation requirements retain verified acceptance.** The five additional evaluation cases expose measured scope/coverage weaknesses. Publication is verified through PR1 and annotated v2.0.0; no service deployment or course-portal submission.
 
+Final repository: [Final Capstone — Ola Domain Support Agent (CrewAI)](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai).
+
 Source: unchanged `Problem_Statement.md`. All original policies, calibrated RAG configuration and original 15 evaluation labels/prompt/rubric remain unchanged. Original requirements allocate Parts1–4:30/30/20/20, with no individual task marks.
 
 ## Executed current verification
 
-Fresh review: 2026-10-11T13:38:06.527038+05:30 (Asia/Kolkata). Both requested final verification commands were executed again; results below are from current processes.
+Fresh review: 2026-11-07T09:21:19.703034+05:30 (Asia/Kolkata). Both final verification phases were executed again; results below are from current processes.
 
 - 56 distinct automated checks,76 executions including fresh dataset/crew repeats; all passed. Dataset8twice, RAG8, crew12twice, focused11, integrated review/governance/cache6, framework6 and additional judge/average fixtures5.
 - Actual localhost Uvicorn HTTP/WebSocket:18HTTP+11messages,29exact correlated masked log entries; malformed requests, session isolation, concurrent clients and mid-request disconnect/survivor passed.
@@ -75,9 +77,9 @@ ERROR-016 lookup and ERROR-017 archive reader were resolved after actual dataset
 
 The two new documentation behavior checks execute actual historical-script link/write statements: both pass, and archived sentinels remain unchanged. Historical milestone verifiers retain their stage-specific assertions; they cannot certify current v2 inputs. Their output now goes to excluded `.runtime/historical-audits`. Current verification uses the final commands above.
 
-README has 177 lines and the required 13-section order; LEARNINGS has 215 words. The AI note describes documented assistant work and includes the user-provided factual assistance statement; it claims no personal design, coding or testing contributions. [History/archive/pin/link review](../evidence/v2_final_review.json) scans every reachable Git snapshot, independently recalculates all60 current/v1 scores with Decimal, verifies163 exact pins, and confirms182 archived records byte-identical plus one Markdown record with link-target changes only. No runtime/model/index/credential artifacts are intended for publication. Setup instructions specify the pinned free model download and index recreation; the fresh offline rebuild started with zero items in both collections and produced33/24.
+README has 154 lines in a nine-section reader-focused order; LEARNINGS has 215 words. The AI note describes documented assistant work and includes the user-provided factual assistance statement; it claims no personal design, coding or testing contributions. [History/archive/pin/link review](../evidence/v2_final_review.json) records the release-time history scan, exact score calculations, dependency pins, and archived-record preservation. No runtime/model/index/credential artifacts are intended for publication. Setup instructions specify the pinned free model download and index recreation; the fresh offline rebuild started with zero items in both collections and produced33/24.
 
-Final content/documentation gates passed after the corrections; exact staged and committed bytes are verified during local commit closure. All current/archive links resolve, Git metadata scan has no findings, and actual ignore checks exclude secrets/runtime/models/indexes while retaining curated evidence. [Document audit](../evidence/final_documentation_audit.json), [content scan](../evidence/final_submission_inspection.json) and the review evidence record actual gate outputs. User authorized Version2 push/PR/history-preserving merge/tag. No personal-contribution claim is made, no deployment or portal submission performed.
+Final content and documentation gates passed on 7 November 2026. All current and archived links resolve, the current 357-file scan has no findings, and ignore checks exclude secrets, runtime files, models, and indexes while retaining curated evidence. [Document audit](../evidence/final_documentation_audit.json), [content scan](../evidence/final_submission_inspection.json), and review evidence record the actual outputs. The final repository publication changes only documentation, verification helpers, and refreshed evidence; no service deployment or portal submission was performed.
 
 Local correction commits: `9711d22` (canonical history review) and `a4b3427` (historical link/output paths). The following audit-record commit contains refreshed runtime evidence and this final report; its exact SHA is obtained from local `polish-v2` HEAD after commit. No application behavior, frozen labels or scoring changed in the review session.
 

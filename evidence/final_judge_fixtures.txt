@@ -5,6 +5,6 @@ test_04_guard_evidence_and_unsafe_refusal (__main__.EvaluationChecks.test_04_gua
 test_05_separate_averages_actual_execution_and_offline (__main__.EvaluationChecks.test_05_separate_averages_actual_execution_and_offline) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.169s
+Ran 5 tests in 0.098s
 
 OK
