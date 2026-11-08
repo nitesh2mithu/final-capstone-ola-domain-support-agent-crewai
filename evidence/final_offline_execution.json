@@ -1,9 +1,9 @@
 {
-  "finished": "2026-11-07T09:31:33.232968+05:30",
+  "finished": "2026-11-08T06:32:12.200745+05:30",
   "jobs": [
     {
       "command": ".venv311/bin/python -m tests.milestone_02_acceptance --report evidence/final_dataset.json",
-      "duration_seconds": 0.046,
+      "duration_seconds": 0.049,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -13,7 +13,7 @@
     },
     {
       "command": ".venv311/bin/python -m tests.milestone_02_acceptance --report evidence/final_dataset_repeat.json",
-      "duration_seconds": 0.034,
+      "duration_seconds": 0.035,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -23,7 +23,7 @@
     },
     {
       "command": ".venv311/bin/python -m tests.milestone_03_acceptance",
-      "duration_seconds": 4.255,
+      "duration_seconds": 4.864,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -33,7 +33,7 @@
     },
     {
       "command": ".venv311/bin/python -m tests.milestone_04_acceptance --report evidence/final_crew.json",
-      "duration_seconds": 4.704,
+      "duration_seconds": 4.93,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -43,7 +43,7 @@
     },
     {
       "command": ".venv311/bin/python -m tests.milestone_04_acceptance --report evidence/final_crew_repeat.json",
-      "duration_seconds": 4.65,
+      "duration_seconds": 4.683,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -53,7 +53,7 @@
     },
     {
       "command": ".venv311/bin/python -m tests.milestone_05_focused",
-      "duration_seconds": 4.428,
+      "duration_seconds": 4.511,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -63,7 +63,7 @@
     },
     {
       "command": ".venv311/bin/python -m tests.milestone_06_acceptance",
-      "duration_seconds": 5.821,
+      "duration_seconds": 5.958,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -73,7 +73,7 @@
     },
     {
       "command": ".venv311/bin/python -m smoke_tests.run_offline",
-      "duration_seconds": 1.264,
+      "duration_seconds": 1.274,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -83,7 +83,7 @@
     },
     {
       "command": ".venv311/bin/python -m scripts.evaluate_support --report evidence/final_evaluation.json",
-      "duration_seconds": 4.522,
+      "duration_seconds": 4.533,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -93,7 +93,7 @@
     },
     {
       "command": ".venv311/bin/python -m scripts.evaluate_support --report evidence/final_evaluation_repeat.json",
-      "duration_seconds": 4.488,
+      "duration_seconds": 4.574,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -103,7 +103,7 @@
     },
     {
       "command": ".venv311/bin/python -m scripts.evaluate_extra --report evidence/v2_extra_evaluation.json",
-      "duration_seconds": 4.216,
+      "duration_seconds": 4.192,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -113,7 +113,7 @@
     },
     {
       "command": ".venv311/bin/python -m scripts.evaluate_extra --report evidence/v2_extra_evaluation_repeat.json",
-      "duration_seconds": 4.113,
+      "duration_seconds": 4.19,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -123,7 +123,7 @@
     },
     {
       "command": ".venv311/bin/python -m tests.v2_evaluation",
-      "duration_seconds": 3.858,
+      "duration_seconds": 3.887,
       "environment": {
         "CAPSTONE_EVIDENCE_PREFIX": "final"
       },
@@ -134,5 +134,5 @@
   ],
   "passed": true,
   "phase": "offline",
-  "started": "2026-11-07T09:30:46.830065+05:30"
+  "started": "2026-11-08T06:31:24.515156+05:30"
 }

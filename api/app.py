@@ -1,4 +1,4 @@
-"""Two useful HTTP endpoints + private-session WebSocket chat, localhost only."""
+"""HTTP endpoints and private-session WebSocket chat for one worker."""
 import asyncio
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -44,9 +44,21 @@ def create_app(log_path: Path=ROOT/'.runtime/api/requests.jsonl',session_factory
         app.state.service.session.histories.clear()
         app.state.service.connections.clear()
 
-    app=FastAPI(title='Ola capstone localhost API',lifespan=lifespan,docs_url=None,redoc_url=None)
+    app=FastAPI(title='Ola Domain Support Agent API',lifespan=lifespan,docs_url=None,redoc_url=None)
     app.state.writer=writer
     app.add_middleware(RequestAuditMiddleware,writer=writer)
+
+    @app.get('/')
+    async def root():
+        return {
+            'name':'Ola Domain Support Agent',
+            'mode':'MOCK_LLM',
+            'endpoints':{'health':'/health','ask':'POST /ask','reset':'POST /reset-session','chat':'WS /ws/chat'},
+        }
+
+    @app.get('/health')
+    async def health():
+        return {'status':'ok','mode':'MOCK_LLM','api_keys_required':False}
 
     @app.exception_handler(RequestValidationError)
     async def validation_error(request: Request,exc):

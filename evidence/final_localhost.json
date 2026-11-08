@@ -1,5 +1,5 @@
 {
-  "base_url": "http://127.0.0.1:56873",
+  "base_url": "http://127.0.0.1:61702",
   "checks": [
     "real HTTP ask/reset, memory/isolation, structured responses",
     "masked success, validation, malformed JSON and precrew injection",
@@ -33,7 +33,7 @@
           }
         },
         "session_id": "live-concurrent-1",
-        "trace_id": "kkglgnihchkfehnckcgdonfmfkpmpckf"
+        "trace_id": "ccpjboiahafiefjdkoaldkphhabpdnac"
       },
       {
         "crew_executed": true,
@@ -58,7 +58,7 @@
           }
         },
         "session_id": "live-concurrent-1",
-        "trace_id": "pncgjjjhjnngefhpkbpnnmicmfgkpkoo"
+        "trace_id": "efhfboigbbaoehhaieobbkdckgfhfhhh"
       }
     ],
     [
@@ -85,7 +85,7 @@
           }
         },
         "session_id": "live-concurrent-2",
-        "trace_id": "lbjdningedibelbciblffaofodnhcahk"
+        "trace_id": "jkkbodpinalkekgejlbeehpnhaccakcl"
       },
       {
         "crew_executed": true,
@@ -110,7 +110,7 @@
           }
         },
         "session_id": "live-concurrent-2",
-        "trace_id": "mdmolbjkfakeeamgijkmofchahjnnmjn"
+        "trace_id": "ecdjnopkndbhekmelcamhkmiocdohbkm"
       }
     ],
     [
@@ -137,7 +137,7 @@
           }
         },
         "session_id": "live-concurrent-3",
-        "trace_id": "pkcipdbfiijoejilkfgjdhjckgpdapfe"
+        "trace_id": "hlehbheklponebmaidjljhbjgchdpdnc"
       },
       {
         "crew_executed": true,
@@ -162,7 +162,7 @@
           }
         },
         "session_id": "live-concurrent-3",
-        "trace_id": "lnffgddceogpebghkphlabahfldfenke"
+        "trace_id": "dhnnjdehekmpeiihjfofffomfcheipjj"
       }
     ]
   ],
@@ -171,7 +171,7 @@
     "during_request": true,
     "other_client_continued": true,
     "removed_session": true,
-    "survivor_session": "ws-glhpdcdcdoigejibkfoemlpgibmbapmj"
+    "survivor_session": "ws-mmgkndknbaomedpeknfclgfcccoibkhd"
   },
   "http": [
     {
@@ -203,7 +203,7 @@
           }
         },
         "session_id": "live-a",
-        "trace_id": "kciifebdamcoeheelopenfgkdhbikgec"
+        "trace_id": "pgkddpecbhgnemdbimmpofjkdpaoafen"
       },
       "status": 200
     },
@@ -236,7 +236,7 @@
           }
         },
         "session_id": "live-a",
-        "trace_id": "chjpjeelhoknejdallnmgnpmgdmbkneb"
+        "trace_id": "ckjjnalfhglgeikhkghmkajcdpjlpdpm"
       },
       "status": 200
     },
@@ -257,7 +257,7 @@
           "ticket": null
         },
         "session_id": "live-b",
-        "trace_id": "ejdoplfkllohebbcipfhbpdlhooboffn"
+        "trace_id": "cocgigolhhgmepamjgmfdeeefmeijdcb"
       },
       "status": 200
     },
@@ -269,7 +269,7 @@
       "response": {
         "reset": true,
         "session_id": "live-a",
-        "trace_id": "enhnmjnocbjmemigllmfbmeegaioidhe"
+        "trace_id": "ebabkmlkijjhejoiljpecihjpfjohklc"
       },
       "status": 200
     },
@@ -290,7 +290,7 @@
           "ticket": null
         },
         "session_id": "live-a",
-        "trace_id": "cmkcgocbkoheeaedkkamleejdfjjhckj"
+        "trace_id": "ehhemindmdhceaaoioemdmjonkocenom"
       },
       "status": 200
     },
@@ -325,7 +325,7 @@
           }
         },
         "session_id": "live-mask",
-        "trace_id": "odfnjofdbamnedonjjfibocoaaghddej"
+        "trace_id": "nhpcnabaaggjepgolbablnkicngojghj"
       },
       "status": 200
     },
@@ -337,7 +337,7 @@
       "path": "/ask",
       "response": {
         "error": "validation_error",
-        "trace_id": "ainhgjmppmokekiblolkggpbcgckbmno"
+        "trace_id": "nfjcbjkomffcekgfkiojedmgjhbilbok"
       },
       "status": 422
     },
@@ -350,7 +350,7 @@
       "path": "/ask",
       "response": {
         "error": "validation_error",
-        "trace_id": "jiaeniedlbfaefcmiheconnofcglnlgc"
+        "trace_id": "jeedealbdfefefiikfpaahmejmlflhhj"
       },
       "status": 422
     },
@@ -359,7 +359,7 @@
       "path": "/ask",
       "response": {
         "error": "validation_error",
-        "trace_id": "mdfcgmdhcfgpelpgjkofjmppncdjchhf"
+        "trace_id": "fdcjaegofpcmeoolijnjlcfbapnbfleg"
       },
       "status": 422
     },
@@ -382,7 +382,7 @@
           "ticket": null
         },
         "session_id": "live-inject",
-        "trace_id": "gbokaolinhfjekegkglkpijbakhmpaic"
+        "trace_id": "fppppdfjgjpaebcelnffeloeikgaippk"
       },
       "status": 200
     },
@@ -405,7 +405,7 @@
           "ticket": null
         },
         "session_id": "live-policy",
-        "trace_id": "eoolkgbcnfooelabjnneiiiihgcgmphg"
+        "trace_id": "idfmoimhgpnbeloejhbhpikkobdgecmi"
       },
       "status": 200
     },
@@ -438,7 +438,7 @@
           }
         },
         "session_id": "live-unknown",
-        "trace_id": "hceppjbckcgnenhkkclamijapaghmjbg"
+        "trace_id": "emphjbdhnpebeofmkchknbmlhhjbfikk"
       },
       "status": 200
     },
@@ -471,7 +471,7 @@
           }
         },
         "session_id": "live-concurrent-1",
-        "trace_id": "kkglgnihchkfehnckcgdonfmfkpmpckf"
+        "trace_id": "ccpjboiahafiefjdkoaldkphhabpdnac"
       },
       "status": 200
     },
@@ -504,7 +504,7 @@
           }
         },
         "session_id": "live-concurrent-2",
-        "trace_id": "lbjdningedibelbciblffaofodnhcahk"
+        "trace_id": "jkkbodpinalkekgejlbeehpnhaccakcl"
       },
       "status": 200
     },
@@ -537,7 +537,7 @@
           }
         },
         "session_id": "live-concurrent-3",
-        "trace_id": "pkcipdbfiijoejilkfgjdhjckgpdapfe"
+        "trace_id": "hlehbheklponebmaidjljhbjgchdpdnc"
       },
       "status": 200
     },
@@ -570,7 +570,7 @@
           }
         },
         "session_id": "live-concurrent-1",
-        "trace_id": "pncgjjjhjnngefhpkbpnnmicmfgkpkoo"
+        "trace_id": "efhfboigbbaoehhaieobbkdckgfhfhhh"
       },
       "status": 200
     },
@@ -603,7 +603,7 @@
           }
         },
         "session_id": "live-concurrent-2",
-        "trace_id": "mdmolbjkfakeeamgijkmofchahjnnmjn"
+        "trace_id": "ecdjnopkndbhekmelcamhkmiocdohbkm"
       },
       "status": 200
     },
@@ -636,7 +636,7 @@
           }
         },
         "session_id": "live-concurrent-3",
-        "trace_id": "lnffgddceogpebghkphlabahfldfenke"
+        "trace_id": "dhnnjdehekmpeiihjfofffomfcheipjj"
       },
       "status": 200
     }
@@ -651,7 +651,7 @@
   "offline": {
     "allowed_host": "127.0.0.1",
     "allowed_localhost_events": 5,
-    "allowed_port": 56873,
+    "allowed_port": 61702,
     "api_keys_required": false,
     "model_checksums_unchanged": true,
     "negative_controls_blocked": [
@@ -693,8 +693,8 @@
             "status": "Open"
           }
         },
-        "session_id": "ws-jcnnpdjldlcmeoobidcmmpokgpkhhnmc",
-        "trace_id": "bhphhhaakeomeeolkabgclmjefbidefp"
+        "session_id": "ws-fgakmchdjipaegpellbdmgcmdpppdaed",
+        "trace_id": "bpdfegominmbecmajeieikkbcnahcmnl"
       }
     },
     {
@@ -712,8 +712,8 @@
           "outcome": "clarification",
           "ticket": null
         },
-        "session_id": "ws-glhpdcdcdoigejibkfoemlpgibmbapmj",
-        "trace_id": "ciheldmifcefecnliopidldbilhcifba"
+        "session_id": "ws-mmgkndknbaomedpeknfclgfcccoibkhd",
+        "trace_id": "eidnlfbhcaadejfllpdfdmlodonfmhcc"
       }
     },
     {
@@ -743,8 +743,8 @@
             "status": "Open"
           }
         },
-        "session_id": "ws-jcnnpdjldlcmeoobidcmmpokgpkhhnmc",
-        "trace_id": "klmnjkeglpliedbelckbeglbmcngmjle"
+        "session_id": "ws-fgakmchdjipaegpellbdmgcmdpppdaed",
+        "trace_id": "kfjookefdlnlelcckpfjpdjjelipdddl"
       }
     },
     {
@@ -754,7 +754,7 @@
       },
       "response": {
         "error": "validation_error",
-        "trace_id": "acjfjbmopecgeiniipcdapjiefgphmoe"
+        "trace_id": "fhficalniphpedbckknbfifbkjhflipg"
       }
     },
     {
@@ -762,7 +762,7 @@
       "masked_input": "[malformed WebSocket fixture]",
       "response": {
         "error": "validation_error",
-        "trace_id": "oiokhedphgooeohfloafmjjegegmhddi"
+        "trace_id": "jpmdgjoblgneeedhihoeadgjpoeakbbj"
       }
     },
     {
@@ -794,8 +794,8 @@
             "status": "Open"
           }
         },
-        "session_id": "ws-glhpdcdcdoigejibkfoemlpgibmbapmj",
-        "trace_id": "mkdongjaamhaeofolajklphfdpoibfci"
+        "session_id": "ws-mmgkndknbaomedpeknfclgfcccoibkhd",
+        "trace_id": "hmpepkcffhgieceijpepcekklcfjlfok"
       }
     },
     {
@@ -815,8 +815,8 @@
           "outcome": "refused",
           "ticket": null
         },
-        "session_id": "ws-glhpdcdcdoigejibkfoemlpgibmbapmj",
-        "trace_id": "bblabfecpfdpekofjhehknoaolamnooi"
+        "session_id": "ws-mmgkndknbaomedpeknfclgfcccoibkhd",
+        "trace_id": "ofeaenjicidaelgaipgdkmggdhnpeoll"
       }
     },
     {
@@ -826,7 +826,7 @@
       },
       "response": {
         "error": "internal_error",
-        "trace_id": "iimjjhaanmdeeldcleedbcohfjleblbn"
+        "trace_id": "mgdidkmphngmeggajbbmkepkhpiphgoc"
       }
     },
     {
@@ -836,7 +836,7 @@
       },
       "response": {
         "error": "internal_error",
-        "trace_id": "nkclkiedmalpegedilpcmipjfmkiknbe"
+        "trace_id": "cljeecljnnjhefadkgfkdkhgddkkjbdk"
       }
     },
     {
@@ -874,8 +874,8 @@
             "status": "Open"
           }
         },
-        "session_id": "ws-glhpdcdcdoigejibkfoemlpgibmbapmj",
-        "trace_id": "pdgdhojfjmgjecdgkpnkklfkfhjcbjpp"
+        "session_id": "ws-mmgkndknbaomedpeknfclgfcccoibkhd",
+        "trace_id": "dibmagmeoihgeencicaamkpihlkdgdbf"
       }
     }
   ]

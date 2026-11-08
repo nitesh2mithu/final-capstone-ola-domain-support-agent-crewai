@@ -1,6 +1,6 @@
 
 Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
-Loading weights: 100%|██████████| 103/103 [00:00<00:00, 24389.62it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 47034.66it/s]
 <PROJECT_CAPSTONE>/api/app.py:42: LangChainDeprecationWarning: RunnableWithMessageHistory is deprecated. Use LangGraph's built-in persistence instead.
   app.state.service=SupportService(session_factory())
 test_01_success_memory_isolation_and_reset (__main__.FocusedAPITests.test_01_success_memory_isolation_and_reset) ... <PROJECT_CAPSTONE>/support/session.py:72: LangChainDeprecationWarning: The class `InMemoryChatMessageHistory` was deprecated in LangChain 1.6.4 and will be removed in 2.0.0 See the short-term memory documentation for recommended alternatives: https://docs.langchain.com/oss/python/langchain/short-term-memory
@@ -18,7 +18,7 @@ test_09_unsafe_answer (__main__.JudgeTests.test_09_unsafe_answer) ... ok
 test_10_freeze_and_offline (__main__.JudgeTests.test_10_freeze_and_offline) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 0.678s
+Ran 11 tests in 0.704s
 
 OK
 {"child_process_attempts": [], "errors": 0, "failures": 0, "network_attempts": [], "passed": true, "tests_run": 11}
