@@ -6,6 +6,29 @@ This capstone demonstrates a customer-support assistant for an Ola-themed scenar
 
 The project runs through command-line tools or FastAPI. All language-model stages use deterministic `MOCK_LLM`, so runtime requires zero API keys and uses no paid model services. Tickets and policies are fabricated for this project and are not official Ola data or policies.
 
+### Grader map
+
+The [acceptance report](docs/FINAL_ACCEPTANCE_REPORT.md) contains the complete commands and arithmetic. This compact map links each official task directly to its implementation and strongest current evidence.
+
+| Task | Implementation | Evidence |
+|---:|---|---|
+| 1 | [Seeded ticket dataset](dataset.py) | [60 records, distributions and repeats](evidence/final_dataset.json) |
+| 2 | [Fabricated policy corpus](knowledge_base/) | [Topic, sentence and hash checks](evidence/final_dataset.json) |
+| 3 | [Chunking](rag/chunking.py) and [local Chroma RAG](rag/core.py) | [33 fixed and 24 sentence chunks](evidence/final_rag.json) |
+| 4 | [Retrieval and fallback](rag/core.py) | [Measured calibration and grounded answers](evidence/final_rag.md) |
+| 5 | [Retrieval comparison](rag/evaluation.py) | [Per-query precision and recall](evidence/final_rag.md) |
+| 6 | [Ticket lookup and escalation](support/tickets.py) | [All 60 lookup results and score distribution](evidence/final_crew.json) |
+| 7 | [Three-agent CrewAI crew](support/crew.py) | [Native kickoff and separate tool calls](evidence/final_crew.json) |
+| 8 | [Session memory](support/session.py) | [Multi-turn, isolation and reset cases](evidence/final_crew.json) |
+| 9 | [Pydantic response models](support/models.py) | [Validated outputs and negative fixtures](evidence/final_crew.json) |
+| 10 | [Input and output guards](support/guardrails.py) | [Masking, injection and grounded-refusal cases](evidence/final_crew.json) |
+| 11 | [FastAPI and WebSocket API](api/app.py) | [Disconnect caught, session removed, second client continued](evidence/final_localhost.json) |
+| 12 | [Masked request logging](api/logging.py) | [29 uniquely traced HTTP/WebSocket records](evidence/final_logs_localhost.jsonl) |
+| 13 | [Source-verifying judge](evaluation/judge.py) and [runner](scripts/evaluate_support.py) | [15-case results](evidence/final_evaluation.md); [forged text, parent and chunk rejection](evidence/v2_judge_fixtures.json) |
+| 14 | [Two-agent AutoGen review](support/review.py) | [Unchanged approval, injected-claim revision and two review calls](evidence/final_acceptance.json) |
+| 15 | [Governance and budgets](support/governance.py) | [Permission and combined-cap rejections](evidence/final_acceptance.json) |
+| 16 | [Policy cache](support/cache.py) | [Crew calls 4→3, RAG calls 1→0, review calls remain 2](evidence/final_acceptance.json) |
+
 ## How it works
 
 1. Input guards mask the declared phone-number format and reject known prompt-injection patterns.
@@ -18,7 +41,7 @@ The application combines local SentenceTransformers embeddings, separate Chroma 
 
 ## Setup and quick start
 
-Use Python 3.11. The verified environment uses Python 3.11.17 on macOS Apple Silicon. Exact dependency versions are in [requirements-api.lock](requirements-api.lock); other platforms may need compatible wheels and their own verification.
+Use Python 3.11. Native setup and the complete verification suite were run with Python 3.11.17 on macOS Apple Silicon; no separate native fresh-clone walkthrough is claimed for Linux or Windows. Vercel separately built the published Git commit as a Linux container, which is clean-container deployment evidence rather than native cross-platform verification. Exact dependency versions are in [requirements-api.lock](requirements-api.lock); other platforms may need compatible wheels and their own verification.
 
 Create the environment and download the pinned public embedding model:
 
@@ -80,7 +103,7 @@ curl --noproxy '*' -s http://127.0.0.1:8000/ask \
 
 FastAPI provides a public service summary at `GET /`, health status at `GET /health`, typed `POST /ask`, `POST /reset-session`, and multi-turn WebSocket `/ws/chat` endpoints. Sessions, memory, cache, and serialized crew execution are process-local, so the server must use one worker.
 
-The verified production API is live at [final-capstone-ola-domain-support-a.vercel.app](https://final-capstone-ola-domain-support-a.vercel.app). It uses the included [Dockerfile](Dockerfile) on Vercel's Container runtime. Runtime state remains ephemeral, and multi-turn sessions are tied to one live instance. See the concise [deployment guide](docs/DEPLOYMENT.md).
+The verified production API is live at [final-capstone-ola-domain-support-a.vercel.app](https://final-capstone-ola-domain-support-a.vercel.app). Vercel built the published Git commit with the included [Dockerfile](Dockerfile) on its Linux Container runtime. Runtime state remains ephemeral, and multi-turn sessions are tied to one live instance. See the concise [deployment guide](docs/DEPLOYMENT.md).
 
 ## Dataset and knowledge base
 
@@ -122,12 +145,14 @@ The midpoint thresholds are **0.390774130821228** for fixed chunks and **0.38389
 
 On six labelled in-scope queries, fixed chunks achieved mean document precision/recall of **1.0/1.0**. Sentence chunks achieved **0.555556/1.0**. Fixed chunking is therefore selected for this corpus because it retrieved fewer irrelevant parent documents; this result should be reevaluated on a larger corpus. [Detailed retrieval evidence](evidence/final_rag.md) includes the queries, chunk IDs, parent-document mapping, fractions, and fallback case.
 
-The deterministic judge scores actual responses and evidence:
+Before scoring, the deterministic judge independently reloads the canonical policy files and regenerates both chunk strategies. Every RAG hit must exactly match a canonical chunk ID, parent, text and metadata, and the chunk text must occur in the raw policy source; forged text, parent or chunk IDs fail before metric calculation. The judge then scores the actual response against these source-verified hits and frozen fact anchors.
 
 | Evaluation set | Cases | Accuracy | Grounding | Completeness | Safety |
 |---|---:|---:|---:|---:|---:|
 | Original | 15 | 1.0 | 1.0 | 1.0 | 1.0 |
 | Additional | 5 | 0.8 | 1.0 | 0.7 | 1.0 |
+
+All five additional cases and their expected evidence were written and hash-frozen before their first execution, then left unchanged. No labels, calibration settings, thresholds, or crew behavior were changed after the results were observed.
 
 The additional cases deliberately retain two measured weaknesses: one answer gives related refund evidence without refusing an undocumented entitlement, and one covers only two of four requested facts. Grounding therefore does not imply that every part of a question was answered. [Original results](evidence/v2_original_evaluation.md), [additional results](evidence/v2_extra_evaluation.md), and [negative fixtures](evidence/v2_judge_fixtures.json) preserve the complete calculations.
 

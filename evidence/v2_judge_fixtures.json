@@ -6,6 +6,11 @@
     "tests_run": 5
   },
   "fixtures": {
+    "canonical_source_verification": {
+      "forged_text": true,
+      "unknown_chunk": true,
+      "wrong_parent": true
+    },
     "correct": {
       "Accuracy": 1.0,
       "Completeness": 1.0,

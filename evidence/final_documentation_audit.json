@@ -11,7 +11,7 @@
     "docs/REQUIREMENTS_TRACKER.md",
     "docs/FINAL_ACCEPTANCE_REPORT.md"
   ],
-  "evidence_links_checked": 239,
+  "evidence_links_checked": 275,
   "ignore_rules_verified": true,
   "local_review_gate": "current v2 task, source, links, README, learnings, publication and deployment checks",
   "official_task_rows": 16,
@@ -20,6 +20,6 @@
   "result": "PASSED",
   "service_deployed": true,
   "setup_excluded_model_download_and_clean_index_recipe_verified": true,
-  "timestamp": "2026-11-08T07:00:52.234399+05:30",
+  "timestamp": "2026-11-08T07:49:43.448337+05:30",
   "unresolved_errors": 0
 }

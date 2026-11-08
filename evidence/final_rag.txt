@@ -1,6 +1,6 @@
 
 Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
-Loading weights: 100%|██████████| 103/103 [00:00<00:00, 17780.52it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 16567.47it/s]
 test_01_chunk_boundaries_overlap_ids_and_parents (__main__.MilestoneThreeTests.test_01_chunk_boundaries_overlap_ids_and_parents) ... ok
 test_02_actual_upserts_are_idempotent_and_embeddings_exist (__main__.MilestoneThreeTests.test_02_actual_upserts_are_idempotent_and_embeddings_exist) ... ok
 test_03_cosine_matches_stored_vectors (__main__.MilestoneThreeTests.test_03_cosine_matches_stored_vectors) ... ok
@@ -11,7 +11,7 @@ test_07_model_missing_fails_locally_and_prior_inputs_unchanged (__main__.Milesto
 test_08_offline_negative_control_and_zero_runtime_attempts (__main__.MilestoneThreeTests.test_08_offline_negative_control_and_zero_runtime_attempts) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.849s
+Ran 8 tests in 0.874s
 
 OK
 {

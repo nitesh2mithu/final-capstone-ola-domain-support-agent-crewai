@@ -4,7 +4,7 @@
 
 The completed Ola Domain Support Agent is published in the [final capstone repository](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai). Its history includes the reviewed [Version 2 repository](https://github.com/nitesh2mithu/Ola-Domain-Support-Agent_Manuel-and-AI), where [pull request #1](https://github.com/nitesh2mithu/Ola-Domain-Support-Agent_Manuel-and-AI/pull/1) preserved the implementation commits. Annotated tag `v2.0.0` identifies that verified merge, while [Version 1](https://github.com/nitesh2mithu/Ola-Domain-Support-Agent_all-ai_v.1) remains preserved separately.
 
-The 7 November 2026 documentation review reorganized the README and supporting records without changing application behavior, policies, frozen evaluation inputs, retrieval calibration, or dependency versions.
+The 7 November 2026 documentation review reorganized the README and supporting records. On 8 November, judge inputs gained canonical-KB source verification and the grader map was added without changing policies, frozen evaluation inputs, metric arithmetic, retrieval calibration, or dependency versions.
 
 | Area | Current result |
 |---|---|
@@ -12,7 +12,7 @@ The 7 November 2026 documentation review reorganized the README and supporting r
 | Runtime verification | 56 distinct checks across 76 executions |
 | Local API verification | 29 HTTP/WebSocket requests with correlated masked logs |
 | Production deployment | Vercel Container on Hobby; live HTTPS and WSS smoke tests passed |
-| Original evaluation | 15 cases: 1.0 Accuracy, Grounding, Completeness, and Safety |
+| Original evaluation | 15 cases: 1.0 Accuracy, Grounding, Completeness, and Safety; retrieved chunks source-verified against the canonical KB |
 | Additional evaluation | 5 cases: 0.8 Accuracy, 1.0 Grounding, 0.7 Completeness, 1.0 Safety |
 | Ticket escalation | Threshold 0.55; 12 recommendations; one equal-score tie excluded |
 | Offline runtime | Deterministic MOCK_LLM, zero API keys, no recorded external attempts |
@@ -20,7 +20,7 @@ The 7 November 2026 documentation review reorganized the README and supporting r
 
 ## Measured weaknesses
 
-The additional evaluation intentionally preserves two weaknesses: a near-domain query receives related evidence without the expected refusal, and a multi-topic query covers only two of four facts. The measurements apply to a small deterministic corpus and do not establish general semantic accuracy or adversarial robustness.
+The additional evaluation intentionally preserves two weaknesses: a near-domain query receives related evidence without the expected refusal, and a multi-topic query covers only two of four facts. Its five cases and expected evidence were written and hash-frozen before their first execution, then left unchanged. The measurements apply to a small deterministic corpus and do not establish general semantic accuracy or adversarial robustness.
 
 Other limits include pattern-based masking, Python audit hooks rather than an operating-system firewall, process-local sessions and cache, simulated budget accounting, and no production authentication.
 

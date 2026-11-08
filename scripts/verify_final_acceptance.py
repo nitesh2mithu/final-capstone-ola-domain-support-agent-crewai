@@ -69,6 +69,8 @@ def main():
         extra_averages[metric]={'sum':str(total),'denominator':5,'average':str(total/5)}
     assert not extra['offline']['network_attempts'] and not extra['offline']['child_process_attempts']
     fixtures=load('v2_judge_fixtures.json');assert fixtures['acceptance']['passed'] and fixtures['acceptance']['tests_run']==5
+    assert fixtures['fixtures']['canonical_source_verification']=={
+        'forged_text':True,'unknown_chunk':True,'wrong_parent':True}
     assert 'Ran 5 tests' in (ROOT/'evidence/final_judge_fixtures.txt').read_text()
     dataset=load('final_dataset.json');historic=load('archive/v1/final_dataset.json')
     original_fields=[{k:v for k,v in t.items() if k!='reopen_count'} for t in dataset['all_records']]
@@ -126,12 +128,18 @@ def main():
             'distinct_unittest_checks':56,'unittest_executions_with_repeats':76,'logical_localhost_requests_and_logs':29,
             'dataset_and_crew_full_repeats_identical':True,'evaluation_full_repeat_identical':True,
             'independent_metric_arithmetic':averages,'rag_calibration_and_arithmetic':calculations,'cache_counters':counters,
-            'behavior_or_scoring_changed':True,'intended_changes':['reopen_count and escalation formula','five separately scored additional cases'],
+            'v2_behavior_or_scoring_changed_from_v1':True,
+            'intended_changes_from_v1':['reopen_count and escalation formula','five separately scored additional cases'],
+            'current_source_verification_gate_added':True,'current_metric_arithmetic_changed':False,
+            'canonical_source_rejections':fixtures['fixtures']['canonical_source_verification'],
             'original15_scoring_rules_and_labels_unchanged':True,'protected_v2_inputs_and_original_labels_unchanged':True,
             'additional5_metric_arithmetic':extra_averages,'additional5_full_repeat_identical':True,'escalation':escalation,
-            'external_runtime_attempts':[],'publication_pending':True,
+            'external_runtime_attempts':[],'repository_published':True,'service_deployed':True,
             'scope':'currentv2 all16 original requirements plus separately preregistered5extra evaluation; v1 archive not used as current execution evidence'}
-    (ROOT/'evidence/final_acceptance_audit.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
-    print(json.dumps({k:v for k,v in result.items() if k not in ['rag_calibration_and_arithmetic']},indent=2,sort_keys=True))
+    serialized=json.dumps(result,indent=2,sort_keys=True)+'\n'
+    (ROOT/'evidence/final_acceptance_audit.json').write_text(serialized)
+    summary=json.dumps({k:v for k,v in result.items() if k not in ['rag_calibration_and_arithmetic']},indent=2,sort_keys=True)+'\n'
+    (ROOT/'evidence/final_acceptance_audit.txt').write_text(summary)
+    print(summary,end='')
 
 if __name__=='__main__':main()

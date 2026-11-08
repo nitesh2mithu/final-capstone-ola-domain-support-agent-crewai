@@ -8,6 +8,12 @@ Commit `1f3ebf1` added a CPU-only Python 3.11 container, Vercel Container config
 
 The verified project, refreshed evidence, and complete Git history were published as [Final Capstone — Ola Domain Support Agent (CrewAI)](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai). The earlier Version 1 and Version 2 repositories remain unchanged as provenance records.
 
+## Judge source verification and grader map — 8 November 2026
+
+The deterministic judge now treats retrieval payloads as untrusted inputs. Before scoring, it independently reloads the canonical policy files, regenerates fixed and sentence chunks, and requires every RAG hit to match its canonical chunk ID, parent, text, metadata and raw source. Negative fixtures reject forged text, a wrong parent and an unknown chunk ID without changing the frozen queries, expected facts, prompts, rubrics or score arithmetic.
+
+The README now includes a compact 16-task implementation/evidence map, the AutoGen approval/revision, cache and WebSocket disconnect proof values, an explicit statement that the five extra cases were written and frozen before execution, and a distinction between native macOS verification and Vercel's clean Linux container build. The single-worker architecture and detailed audit records remain unchanged.
+
 ## Documentation finalization — 7 November 2026
 
 The README now leads with the support problem, end-to-end flow, setup, and usage. Required dataset, retrieval, and evaluation measurements remain in the README, while release history and extended verification details link to their dedicated records.

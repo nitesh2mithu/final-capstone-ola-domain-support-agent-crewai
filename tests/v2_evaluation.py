@@ -27,6 +27,17 @@ class EvaluationChecks(unittest.TestCase):
         self.assertFalse({c['id'] for c in original}&{c['id'] for c in self.cases})
     def test_02_original_rules_partial_coverage_and_unsupported_inference(self):
         good=self.original('correct',self.response)
+        source_rejections={}
+        for name,field,value in [
+            ('forged_text','text',self.tools['rag']['hits'][0]['text']+' Fabricated policy text.'),
+            ('wrong_parent','document_id','12_ticket_retention'),
+            ('unknown_chunk','chunk_id',self.tools['rag']['hits'][0]['chunk_id']+':forged'),
+        ]:
+            tools=copy.deepcopy(self.tools);tools['rag']['hits'][0][field]=value
+            with self.assertRaisesRegex(ValueError,'Canonical KB source verification failed'):
+                DeterministicJudge().call(judge_messages(self.case,self.response,tools))
+            source_rejections[name]=True
+        REPORT['fixtures']['canonical_source_verification']=source_rejections
         bad=copy.deepcopy(self.response);bad['answer']=bad['answer'].replace('5 to 7 business days','1 business day')
         self.assertLess(self.original('incorrect',bad).Accuracy,good.Accuracy)
         bad=copy.deepcopy(self.response);bad['answer']+='\nAll delayed pickups guarantee automatic cancellation refunds.'
@@ -39,6 +50,9 @@ class EvaluationChecks(unittest.TestCase):
         case=self.cases[0];judge=ExtraJudge();good={'answer':FALLBACK,'outcome':'refused','citations':[],'ticket':None,'guardrails':['groundedness_refusal']}
         a=JudgeVerdict.model_validate_json(judge.call(extra_messages(case,good,self.tools)))
         b=JudgeVerdict.model_validate_json(judge.call(extra_messages(case,self.response,self.tools)))
+        forged=copy.deepcopy(self.tools);forged['rag']['hits'][0]['text']+=' Fabricated policy text.'
+        with self.assertRaisesRegex(ValueError,'Canonical KB source verification failed'):
+            judge.call(extra_messages(case,self.response,forged))
         self.assertEqual(a.Accuracy,1);self.assertEqual(b.Accuracy,0);self.assertEqual(b.Completeness,0)
         self.assertEqual(b.Grounding,1) # supported excerpts can still fail to answer the query
         REPORT['fixtures']['near_correct_refusal']=a.model_dump();REPORT['fixtures']['near_related_only']=b.model_dump()

@@ -30,8 +30,12 @@ def main():
     readme=(ROOT/'README.md').read_text()
     assert readme.startswith('# Completed Ola (Business Operations / Customer Support) track')
     for token in ['requirements-api.lock','scripts.download_embedding_model','scripts.rebuild_indexes','scripts.serve_api',
-                  'scripts.run_final_verification','scripts.evaluate_support','1110a243fdf4706b3f48f1d95db1a4f5529b4d41']:
+                  'scripts.run_final_verification','scripts.evaluate_support','1110a243fdf4706b3f48f1d95db1a4f5529b4d41',
+                  'independently reloads the canonical policy files','written and hash-frozen before their first execution',
+                  'no separate native fresh-clone walkthrough is claimed']:
         assert token in readme,token
+    grader_rows=[line for line in readme.splitlines() if re.match(r'^\| (?:[1-9]|1[0-6]) \|',line)]
+    assert len(grader_rows)==16
     assert len(readme.splitlines())<250
     sections=['Overview','How it works','Setup and quick start','Usage examples','Dataset and knowledge base',
               'Retrieval and evaluation','Guardrails, governance and limitations','Documentation','AI assistance']

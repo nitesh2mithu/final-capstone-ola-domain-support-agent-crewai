@@ -22,7 +22,6 @@
       "sum": "5.0"
     }
   },
-  "behavior_or_scoring_changed": true,
   "cache_counters": {
     "baseline": {
       "crew_model_calls": 4,
@@ -62,6 +61,13 @@
       "tool_calls": 0
     }
   },
+  "canonical_source_rejections": {
+    "forged_text": true,
+    "unknown_chunk": true,
+    "wrong_parent": true
+  },
+  "current_metric_arithmetic_changed": false,
+  "current_source_verification_gate_added": true,
   "dataset_and_crew_full_repeats_identical": true,
   "distinct_unittest_checks": 56,
   "escalation": {
@@ -96,14 +102,13 @@
       "sum": "15.0"
     }
   },
-  "intended_changes": [
+  "intended_changes_from_v1": [
     "reopen_count and escalation formula",
     "five separately scored additional cases"
   ],
   "logical_localhost_requests_and_logs": 29,
   "original15_scoring_rules_and_labels_unchanged": true,
   "protected_v2_inputs_and_original_labels_unchanged": true,
-  "publication_pending": true,
   "rag_calibration_and_arithmetic": {
     "fixed": {
       "mean_precision": 1.0,
@@ -325,8 +330,10 @@
       "threshold": 0.38389015197753906
     }
   },
+  "repository_published": true,
   "result": "PASSED",
   "scope": "currentv2 all16 original requirements plus separately preregistered5extra evaluation; v1 archive not used as current execution evidence",
+  "service_deployed": true,
   "tasks_verified": [
     1,
     2,
@@ -345,6 +352,7 @@
     15,
     16
   ],
-  "timestamp": "2026-11-08T06:32:36.562375+05:30",
-  "unittest_executions_with_repeats": 76
+  "timestamp": "2026-11-08T07:47:11.859873+05:30",
+  "unittest_executions_with_repeats": 76,
+  "v2_behavior_or_scoring_changed_from_v1": true
 }
