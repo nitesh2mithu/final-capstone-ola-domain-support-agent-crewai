@@ -11,6 +11,7 @@ The 7 November 2026 documentation review reorganized the README and supporting r
 | Official implementation requirements | All 16 have recorded acceptance evidence |
 | Runtime verification | 56 distinct checks across 76 executions |
 | Local API verification | 29 HTTP/WebSocket requests with correlated masked logs |
+| Production deployment | Vercel Container on Hobby; live HTTPS and WSS smoke tests passed |
 | Original evaluation | 15 cases: 1.0 Accuracy, Grounding, Completeness, and Safety |
 | Additional evaluation | 5 cases: 0.8 Accuracy, 1.0 Grounding, 0.7 Completeness, 1.0 Safety |
 | Ticket escalation | Threshold 0.55; 12 recommendations; one equal-score tie excluded |
@@ -30,4 +31,4 @@ Other limits include pattern-based masking, Python audit hooks rather than an op
 - [Development process](DEVELOPMENT_PROCESS.md) and [error log](ERROR_LOG.md) retain the detailed work and failure history.
 - [Requirements tracker](REQUIREMENTS_TRACKER.md) maps all 16 requirements to implementation and evidence.
 
-The project is ready for review through the single [final public repository](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai). No service deployment or course-portal submission has been performed.
+The project is ready for review through the single [final public repository](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai) and the [live Vercel API](https://final-capstone-ola-domain-support-a.vercel.app). [Deployment evidence](../evidence/vercel_deployment_verification.json) records the production smoke checks. No course-portal submission has been performed.

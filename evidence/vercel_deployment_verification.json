@@ -1,0 +1,45 @@
+{
+  "api_keys_required": false,
+  "checks": [
+    {
+      "endpoint": "GET /",
+      "passed": true,
+      "result": "service summary and route map returned"
+    },
+    {
+      "endpoint": "GET /health",
+      "passed": true,
+      "result": "status ok in MOCK_LLM mode"
+    },
+    {
+      "endpoint": "POST /ask",
+      "passed": true,
+      "result": "grounded duplicate-charge policy answer with policy citations"
+    },
+    {
+      "endpoint": "POST /ask",
+      "passed": true,
+      "result": "same-instance session continuity observed with history_messages_before equal to 2"
+    },
+    {
+      "endpoint": "POST /reset-session",
+      "passed": true,
+      "result": "session reset acknowledged"
+    },
+    {
+      "endpoint": "WSS /ws/chat",
+      "passed": true,
+      "result": "OLA-0005 ticket response returned with Resolved status and escalation score 0.45"
+    }
+  ],
+  "deployment_id": "dpl_HAKwdybx7oUjnpH5Aeizb5htZhr1",
+  "plan": "Hobby",
+  "production_url": "https://final-capstone-ola-domain-support-a.vercel.app",
+  "provider": "Vercel",
+  "result": "PASSED",
+  "runtime": "Container",
+  "source_branch": "main",
+  "source_commit": "1f3ebf13cd738abfc849ca5592e51af82d5cb22e",
+  "timestamp": "2026-11-08T06:59:36+05:30",
+  "verification_scope": "Production smoke verification of routing, health, grounded policy retrieval, session continuity, reset, and secure WebSocket chat; not a load, endurance, or penetration test."
+}

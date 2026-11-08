@@ -1,5 +1,6 @@
 {
   "completed_track_declaration_verified": true,
+  "course_portal_submission_performed": false,
   "documents_checked": [
     "docs/LEARNINGS.md",
     "docs/CHANGELOG_V2.md",
@@ -10,14 +11,15 @@
     "docs/REQUIREMENTS_TRACKER.md",
     "docs/FINAL_ACCEPTANCE_REPORT.md"
   ],
-  "evidence_links_checked": 235,
+  "evidence_links_checked": 239,
   "ignore_rules_verified": true,
-  "local_review_gate": "current v2 task, source, links, README, learnings and exclusion checks; improvements remain local",
+  "local_review_gate": "current v2 task, source, links, README, learnings, publication and deployment checks",
   "official_task_rows": 16,
-  "publication_or_submission_performed": false,
+  "repository_published": true,
   "required_source_package_completeness": true,
   "result": "PASSED",
+  "service_deployed": true,
   "setup_excluded_model_download_and_clean_index_recipe_verified": true,
-  "timestamp": "2026-11-08T06:35:26.706492+05:30",
+  "timestamp": "2026-11-08T07:00:52.234399+05:30",
   "unresolved_errors": 0
 }

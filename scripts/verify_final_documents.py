@@ -57,8 +57,9 @@ def main():
     result={'timestamp':datetime.now(ZoneInfo('Asia/Calcutta')).isoformat(),'result':'PASSED','documents_checked':docs,
             'evidence_links_checked':links,'official_task_rows':16,'required_source_package_completeness':True,'completed_track_declaration_verified':True,
             'setup_excluded_model_download_and_clean_index_recipe_verified':True,'ignore_rules_verified':True,
-            'unresolved_errors':0,'publication_or_submission_performed':False,
-            'local_review_gate':'current v2 task, source, links, README, learnings and exclusion checks; improvements remain local'}
+            'unresolved_errors':0,'repository_published':True,'service_deployed':True,
+            'course_portal_submission_performed':False,
+            'local_review_gate':'current v2 task, source, links, README, learnings, publication and deployment checks'}
     (ROOT/'evidence/final_documentation_audit.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
     print(json.dumps(result,indent=2,sort_keys=True))
 

@@ -9,7 +9,7 @@
     "runtime/secret directories",
     "noncurated live logs"
   ],
-  "files_inspected": 361,
+  "files_inspected": 362,
   "findings": [],
   "limitations": "Static patterns are not exhaustive secret detection. Fixed phone-pattern runs inside long hexadecimal digests or decimal metrics are classified as numeric false positives; runtime masking verified separately.",
   "manifest": [
@@ -34,9 +34,9 @@
       "sha256": "81e2d0ca4499c1865cf8c9fee41c1ce90825440f3eb7f91593c4c2ab9d89dbd6"
     },
     {
-      "bytes": 10569,
+      "bytes": 10554,
       "path": "README.md",
-      "sha256": "c2a89f5693c232319d49f33833e83f63bc2c4e2f25ccb3213908bb89275066b1"
+      "sha256": "fb2c85cc48d5822afc1b7ef4880cf1894a071dc79769446224d2b30e6ad9de19"
     },
     {
       "bytes": 60,
@@ -69,14 +69,14 @@
       "sha256": "1617a1b635369c0d24a7e61474fd61166a4ad3b15221f7332024595b0c0aab8a"
     },
     {
-      "bytes": 3697,
+      "bytes": 4241,
       "path": "docs/CHANGELOG_V2.md",
-      "sha256": "18b53dd53af026dde3ec70c876e9b4f08d6049ebb40950542e2b10ebb92e091b"
+      "sha256": "8d49d459549167d74a6b8888227628e4e0d35e19c1422252d959539e6c1ff8ea"
     },
     {
-      "bytes": 1563,
+      "bytes": 1953,
       "path": "docs/DEPLOYMENT.md",
-      "sha256": "32629e0dc4793eaf9d88f93b0e99595ceecc484148b89b2353453f41f268e81b"
+      "sha256": "83357195788685f2235a4ba7a337ace39140c3def2e3baccb86c0440510339d2"
     },
     {
       "bytes": 119895,
@@ -89,9 +89,9 @@
       "sha256": "dcaf128d89c36e049f0fdce26b1ad74e9779b9a93229885c31c46c6ebdf6352d"
     },
     {
-      "bytes": 17050,
+      "bytes": 17223,
       "path": "docs/FINAL_ACCEPTANCE_REPORT.md",
-      "sha256": "a82dc154cdfe01f76c0d8c4bacd132de1860213f9784b1d0e921cf67e9120215"
+      "sha256": "29a8c73a14d5c7f373935c5cbe1e2d81fd0fe705752ccf1c33c8e6a801481746"
     },
     {
       "bytes": 1696,
@@ -99,9 +99,9 @@
       "sha256": "9ff427dbba891b54bf645773a5c7986b0caa2ba94fe7dc7ddd4d04297751a961"
     },
     {
-      "bytes": 2774,
+      "bytes": 3035,
       "path": "docs/PROJECT_STATUS.md",
-      "sha256": "a905dde4f403dcc1943c0088c722dc6d6f43ee85278c374330ce26a679d96d62"
+      "sha256": "a6fad3de12dcde0b1007681581f8712ccbed8f6ce810e237deb5fbeb2a09d319"
     },
     {
       "bytes": 42840,
@@ -1144,9 +1144,9 @@
       "sha256": "b74b2fb67096cb76a1a0ce827761744aae762f43bb7948a9862e32b05225c83c"
     },
     {
-      "bytes": 801,
+      "bytes": 847,
       "path": "evidence/final_documentation_audit.json",
-      "sha256": "65cc02b79f0a10d3a9a6cb068c2205bd8de107d10dca36a80c8929c68fa27024"
+      "sha256": "ae0837c1fccd38013ed61db3cb975a654de1d15af0dd7a493a28adece2907f23"
     },
     {
       "bytes": 801,
@@ -1264,9 +1264,9 @@
       "sha256": "4c01027ccd1686d9d69572425c405eca450a75313ec109fb27e20a8c789a68ac"
     },
     {
-      "bytes": 63385,
+      "bytes": 63538,
       "path": "evidence/final_submission_inspection.json",
-      "sha256": "f649850039169cce3886b36033ffea82fed834d6c76b5bf869353ea115980d5c"
+      "sha256": "636a71f4ea6eda08b0171b9c9179cc1ae777fb913375cd1e47fb208c80fedbec"
     },
     {
       "bytes": 768,
@@ -1479,6 +1479,11 @@
       "sha256": "aad8a8b3165722bda635c038f6cb1dd20aa5c36fbfc511de834fcb6ee43638bb"
     },
     {
+      "bytes": 1444,
+      "path": "evidence/vercel_deployment_verification.json",
+      "sha256": "b7bb4ab4b60239547349bdb13b93a538b2918737709f89dc8ef98b823990e154"
+    },
+    {
       "bytes": 568,
       "path": "knowledge_base/01_ticket_priority.md",
       "sha256": "bab83b53eab4704bfae1d10f133dec0e0742ad63dc2032d02bc7ae48eb082554"
@@ -1679,9 +1684,9 @@
       "sha256": "c5ace483e719d09afc8d9269d853e88a4e8c755539737d47e7f2ec2822524979"
     },
     {
-      "bytes": 5016,
+      "bytes": 5067,
       "path": "scripts/verify_final_documents.py",
-      "sha256": "64b035ecf55ef91f1f1887c1e19b23140d78c23b1c7ad85bdc62f97ebecbb1bc"
+      "sha256": "f89294ab0124b03e9fce8c255ee9859b91ebd89040c2fb5ab62dc21c70063039"
     },
     {
       "bytes": 5463,
@@ -1821,6 +1826,6 @@
   ],
   "result": "PASSED",
   "scope": "intended allowlist",
-  "timestamp": "2026-11-08T06:35:27.736509+05:30",
-  "total_text_bytes": 15102514
+  "timestamp": "2026-11-08T07:00:59.373628+05:30",
+  "total_text_bytes": 15105561
 }

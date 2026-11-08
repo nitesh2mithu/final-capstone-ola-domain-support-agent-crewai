@@ -1,6 +1,6 @@
 # Version 2 Acceptance Report
 
-**Verdict: VERSION 2 PUBLISHED — all 16 official implementation requirements retain verified acceptance.** The five additional evaluation cases expose measured scope/coverage weaknesses. Publication is verified through PR1 and annotated v2.0.0; no service deployment or course-portal submission.
+**Verdict: VERSION 2 PUBLISHED AND DEPLOYED — all 16 official implementation requirements retain verified acceptance.** The five additional evaluation cases expose measured scope/coverage weaknesses. Publication is verified through PR1 and annotated v2.0.0. The [Vercel production deployment](https://final-capstone-ola-domain-support-a.vercel.app) passed the recorded [live smoke checks](../evidence/vercel_deployment_verification.json); no course-portal submission was performed.
 
 Final repository: [Final Capstone — Ola Domain Support Agent (CrewAI)](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai).
 
@@ -79,7 +79,7 @@ The two new documentation behavior checks execute actual historical-script link/
 
 README has 154 lines in a nine-section reader-focused order; LEARNINGS has 215 words. The AI note describes documented assistant work and includes the user-provided factual assistance statement; it claims no personal design, coding or testing contributions. [History/archive/pin/link review](../evidence/v2_final_review.json) records the release-time history scan, exact score calculations, dependency pins, and archived-record preservation. No runtime/model/index/credential artifacts are intended for publication. Setup instructions specify the pinned free model download and index recreation; the fresh offline rebuild started with zero items in both collections and produced33/24.
 
-Final content and documentation gates passed on 7 November 2026. All current and archived links resolve, the current 357-file scan has no findings, and ignore checks exclude secrets, runtime files, models, and indexes while retaining curated evidence. [Document audit](../evidence/final_documentation_audit.json), [content scan](../evidence/final_submission_inspection.json), and review evidence record the actual outputs. The final repository publication changes only documentation, verification helpers, and refreshed evidence; no service deployment or portal submission was performed.
+Final content and documentation gates passed on 7 November 2026 and were refreshed before the 8 November deployment. All current and archived links resolve, and ignore checks exclude secrets, runtime files, models, and indexes while retaining curated evidence. [Document audit](../evidence/final_documentation_audit.json), [content scan](../evidence/final_submission_inspection.json), [deployment evidence](../evidence/vercel_deployment_verification.json), and review evidence record the actual outputs. The Vercel service is live; no course-portal submission was performed.
 
 Local correction commits: `9711d22` (canonical history review) and `a4b3427` (historical link/output paths). The following audit-record commit contains refreshed runtime evidence and this final report; its exact SHA is obtained from local `polish-v2` HEAD after commit. No application behavior, frozen labels or scoring changed in the review session.
 

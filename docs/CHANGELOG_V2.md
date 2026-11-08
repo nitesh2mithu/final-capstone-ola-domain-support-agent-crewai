@@ -1,5 +1,9 @@
 # Change record
 
+## Vercel production deployment — 8 November 2026
+
+Commit `1f3ebf1` added a CPU-only Python 3.11 container, Vercel Container configuration, public root and health routes, and deployment instructions. The production API at [final-capstone-ola-domain-support-a.vercel.app](https://final-capstone-ola-domain-support-a.vercel.app) passed HTTPS root, health, policy, session, and reset checks plus secure WebSocket ticket lookup. The [deployment record](../evidence/vercel_deployment_verification.json) states the verified scope and limitations.
+
 ## Final capstone publication — 7 November 2026
 
 The verified project, refreshed evidence, and complete Git history were published as [Final Capstone — Ola Domain Support Agent (CrewAI)](https://github.com/nitesh2mithu/final-capstone-ola-domain-support-agent-crewai). The earlier Version 1 and Version 2 repositories remain unchanged as provenance records.

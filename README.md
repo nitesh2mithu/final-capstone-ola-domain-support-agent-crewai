@@ -80,7 +80,7 @@ curl --noproxy '*' -s http://127.0.0.1:8000/ask \
 
 FastAPI provides a public service summary at `GET /`, health status at `GET /health`, typed `POST /ask`, `POST /reset-session`, and multi-turn WebSocket `/ws/chat` endpoints. Sessions, memory, cache, and serialized crew execution are process-local, so the server must use one worker.
 
-For a container deployment, build the included [Dockerfile](Dockerfile) and check `GET /health` before sending support requests. The same image can run on Vercel's container runtime or a conventional container service such as Cloud Run. Runtime state remains ephemeral, and multi-turn sessions are tied to one live instance. See the concise [deployment guide](docs/DEPLOYMENT.md).
+The verified production API is live at [final-capstone-ola-domain-support-a.vercel.app](https://final-capstone-ola-domain-support-a.vercel.app). It uses the included [Dockerfile](Dockerfile) on Vercel's Container runtime. Runtime state remains ephemeral, and multi-turn sessions are tied to one live instance. See the concise [deployment guide](docs/DEPLOYMENT.md).
 
 ## Dataset and knowledge base
 

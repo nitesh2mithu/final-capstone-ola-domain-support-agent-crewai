@@ -2,7 +2,9 @@
 
 ## Vercel
 
-The repository is configured for Vercel's container runtime through the root `Dockerfile` and `vercel.json`.
+Production URL: [https://final-capstone-ola-domain-support-a.vercel.app](https://final-capstone-ola-domain-support-a.vercel.app)
+
+The repository is configured for Vercel's container runtime through the root `Dockerfile` and `vercel.json`. The production deployment of commit `1f3ebf1` passed root, health, policy, session, reset, and secure WebSocket smoke tests. The machine-readable [deployment evidence](../evidence/vercel_deployment_verification.json) records that scope.
 
 1. Import `nitesh2mithu/final-capstone-ola-domain-support-agent-crewai` in Vercel.
 2. Keep the root directory at the repository root and the framework preset as **Container**.
@@ -26,7 +28,7 @@ The locally verified image was about 722 MB and used about 502 MiB after HTTP an
 ```sh
 curl -s -H 'Content-Type: application/json' \
   -d '{"query":"What is the refund policy for a duplicate charge?","session_id":"smoke-test"}' \
-  https://YOUR-DEPLOYMENT.example/ask
+  https://final-capstone-ola-domain-support-a.vercel.app/ask
 ```
 
 The public root lists the available routes. No API key or third-party model credential is required.
